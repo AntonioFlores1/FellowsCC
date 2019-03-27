@@ -13,7 +13,7 @@
         <!--Tab Bar Controller-->
         <scene sceneID="Me2-4A-aHC">
             <objects>
-                <tabBarController id="blV-Wb-tU0" sceneMemberID="viewController">
+                <tabBarController storyboardIdentifier="MainPageTabBarController" id="blV-Wb-tU0" customClass="TabBarController" customModule="FellowsCC" customModuleProvider="target" sceneMemberID="viewController">
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="sF1-Jg-TMx">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -27,7 +27,7 @@
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wX1-71-iBt" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-470" y="802"/>
+            <point key="canvasLocation" x="468" y="801.94902548725645"/>
         </scene>
         <!--Main Page View Controller-->
         <scene sceneID="tne-QT-ifu">
@@ -43,7 +43,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1847.2" y="614.84257871064472"/>
+            <point key="canvasLocation" x="2786.4000000000001" y="614.84257871064472"/>
         </scene>
         <!--Account Settings View Controller-->
         <scene sceneID="h8z-Tl-QEr">
@@ -55,11 +55,17 @@
                         <color key="backgroundColor" red="0.062923629780000004" green="0.81859086670000003" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <viewLayoutGuide key="safeArea" id="R9c-7K-LXZ"/>
                     </view>
-                    <navigationItem key="navigationItem" id="49E-3Z-8Gm"/>
+                    <navigationItem key="navigationItem" id="49E-3Z-8Gm">
+                        <barButtonItem key="rightBarButtonItem" title="SignOut" id="nVB-7q-Pkw">
+                            <connections>
+                                <action selector="signOutPressed:" destination="gVe-3U-yKm" id="Maf-lK-SlD"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="BTy-kb-5et" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1846" y="1361"/>
+            <point key="canvasLocation" x="2784.8000000000002" y="1360.569715142429"/>
         </scene>
         <!--Friends View Controller-->
         <scene sceneID="DqC-FF-Pcx">
@@ -75,7 +81,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1a9-Cg-FdE" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1847" y="-123"/>
+            <point key="canvasLocation" x="2786" y="-168"/>
         </scene>
         <!--Friends Detail View Controller-->
         <scene sceneID="Vwg-Pe-Acr">
@@ -90,7 +96,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1Uo-wq-p1u" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3253" y="-111"/>
+            <point key="canvasLocation" x="4196" y="-124"/>
         </scene>
         <!--Main Detail View Controller-->
         <scene sceneID="Skg-f5-yZk">
@@ -105,7 +111,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mrm-XP-PFw" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3252" y="615"/>
+            <point key="canvasLocation" x="4191.1999999999998" y="614.84257871064472"/>
         </scene>
         <!--Detail Account View Controller-->
         <scene sceneID="HTB-dw-6ct">
@@ -120,13 +126,13 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="due-3e-S8R" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3258" y="1352"/>
+            <point key="canvasLocation" x="4196" y="1351.5742128935533"/>
         </scene>
-        <!--Item-->
+        <!--Home-->
         <scene sceneID="43u-im-30w">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="69e-4F-Dh6" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="f4l-Pm-r67"/>
+                    <tabBarItem key="tabBarItem" title="Home" id="f4l-Pm-r67"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="oH7-t7-LkL">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
@@ -139,13 +145,13 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="DaD-v6-ZSm" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="908" y="614.84257871064472"/>
+            <point key="canvasLocation" x="1847.2" y="614.84257871064472"/>
         </scene>
-        <!--Item-->
+        <!--Friends-->
         <scene sceneID="DTv-DS-Gwh">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="ATC-45-y9f" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="3b9-KP-6fQ"/>
+                    <tabBarItem key="tabBarItem" title="Friends" id="3b9-KP-6fQ"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="azt-It-i0c">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
@@ -158,13 +164,13 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="OkX-AX-yH0" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="908" y="-123"/>
+            <point key="canvasLocation" x="1847" y="-169"/>
         </scene>
-        <!--Item-->
+        <!--Settings-->
         <scene sceneID="OuG-Ue-YNC">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="VWm-j8-VOX" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="X5c-6d-5Na"/>
+                    <tabBarItem key="tabBarItem" title="Settings" id="X5c-6d-5Na"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="6eX-OB-ceG">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
@@ -177,7 +183,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="d6X-wy-DS0" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="908" y="1361"/>
+            <point key="canvasLocation" x="1847.2" y="1360.569715142429"/>
         </scene>
     </scenes>
 </document>
