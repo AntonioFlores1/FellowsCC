@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		096DA6D6224C177F007590CC /* AccountSettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 096DA6D5224C177F007590CC /* AccountSettingsView.swift */; };
+		096DA6D8224C1798007590CC /* DetailAccountView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 096DA6D7224C1798007590CC /* DetailAccountView.swift */; };
 		55178F7E224BDD9F001D6BB3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55178F7D224BDD9F001D6BB3 /* AppDelegate.swift */; };
 		55178F83224BDD9F001D6BB3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 55178F81224BDD9F001D6BB3 /* Main.storyboard */; };
 		55178F85224BDDA2001D6BB3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 55178F84224BDDA2001D6BB3 /* Assets.xcassets */; };
@@ -37,6 +39,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		096DA6D5224C177F007590CC /* AccountSettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountSettingsView.swift; sourceTree = "<group>"; };
+		096DA6D7224C1798007590CC /* DetailAccountView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailAccountView.swift; sourceTree = "<group>"; };
 		4EF7CF0150D6B7E408F81F22 /* Pods-FellowsCC.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FellowsCC.release.xcconfig"; path = "Target Support Files/Pods-FellowsCC/Pods-FellowsCC.release.xcconfig"; sourceTree = "<group>"; };
 		55178F7A224BDD9F001D6BB3 /* FellowsCC.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FellowsCC.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		55178F7D224BDD9F001D6BB3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -153,7 +157,9 @@
 			isa = PBXGroup;
 			children = (
 				55178FA5224BE010001D6BB3 /* AccountSettingsViewController.swift */,
+				096DA6D5224C177F007590CC /* AccountSettingsView.swift */,
 				55178FA7224BE02C001D6BB3 /* DetailAccountViewController.swift */,
+				096DA6D7224C1798007590CC /* DetailAccountView.swift */,
 			);
 			name = Settings;
 			sourceTree = "<group>";
@@ -379,11 +385,13 @@
 				55178FA8224BE02C001D6BB3 /* DetailAccountViewController.swift in Sources */,
 				55178F93224BDE0A001D6BB3 /* MainPageViewController.swift in Sources */,
 				55178F7E224BDD9F001D6BB3 /* AppDelegate.swift in Sources */,
+				096DA6D6224C177F007590CC /* AccountSettingsView.swift in Sources */,
 				55178FAD224BEF86001D6BB3 /* CreateViewController.swift in Sources */,
 				55178FA1224BDF1C001D6BB3 /* PayView.swift in Sources */,
 				55178F9E224BDEE1001D6BB3 /* HistroyDetailTableViewCell.swift in Sources */,
 				55178FC3224C01AD001D6BB3 /* TabBarController.swift in Sources */,
 				55178FB2224BF043001D6BB3 /* AuthSerice.swift in Sources */,
+				096DA6D8224C1798007590CC /* DetailAccountView.swift in Sources */,
 				55178F99224BDE79001D6BB3 /* FriendsDetailViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

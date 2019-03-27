@@ -1,0 +1,15 @@
+//
+//  DetailAccountView.swift
+//  FellowsCC
+//
+//  Created by Matthew Huie on 3/27/19.
+//  Copyright © 2019 Pursuit. All rights reserved.
+//
+
+import UIKit
+
+class DetailAccountView: UIView {
+
+    
+
+}

@@ -11,9 +11,15 @@ import UIKit
 class AccountSettingsViewController: UIViewController {
 
     private var authService = AppDelegate.authservice
+    let accountSettings = AccountSettingsView()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        view.addSubview(accountSettings)
+
     }
+    
+    
     
     
     @IBAction func signOutPressed(_ sender: Any) {
