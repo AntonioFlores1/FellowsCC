@@ -56,6 +56,7 @@ class MainPageViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        navigationItem.title = "FellowsCC"
        // view.addSubview(requestPayment)
         //view.addSubview(recievePayment)
         view.backgroundColor = .white
@@ -69,7 +70,7 @@ authService.authserviceSignOutDelegate = self
     }
     
     @objc func flipCreditCard(){
-        navigationController?.pushViewController(DetailAccountViewController(), animated: true)
+        navigationController?.pushViewController(MainDetailViewController(), animated: true)
     }
     
     @objc func sendMoney(){
