@@ -105,18 +105,54 @@ class PayView: UIView {
         button.addTarget(self, action: #selector(numberPressed(button:)), for: .touchUpInside)
         return button
     }()
-    
+/////////////////////////////////////////////////////////////////////////////////////
+
+    lazy var period: UIButton = {
+        let button = UIButton()
+        button.setTitle(".", for: .normal)
+        button.setTitleColor(.black, for: .normal)
+        button.backgroundColor = .white
+       // button.tag = 10
+        button.addTarget(self, action: #selector(numberPressed(button:)), for: .touchUpInside)
+        return button
+    }()
+    lazy var clearButton: UIButton = {
+        let button = UIButton()
+        button.setTitle("Clear", for: .normal)
+        button.setTitleColor(.black, for: .normal)
+        button.backgroundColor = .white
+        button.tag = 0
+        button.addTarget(self, action: #selector(numberPressed(button:)), for: .touchUpInside)
+        return button
+    }()
+    lazy var button0: UIButton = {
+        let button = UIButton()
+        button.setTitle("0", for: .normal)
+        button.setTitleColor(.black, for: .normal)
+        button.backgroundColor = .white
+        button.tag = 0
+        button.addTarget(self, action: #selector(numberPressed(button:)), for: .touchUpInside)
+        return button
+    }()
     @objc func numberPressed(button:UIButton){
         if numberDisplay.text == "0" {
-            var changeText = "$"
+           // var changeText = "$"
             let value = button.tag.description
-//            changeText = numberDisplay.text!
             numberDisplay.text = "$" + value
+            if period.isTouchInside {
+                numberDisplay.text = value + "."
+            }
         } else {
             if (numberDisplay.text?.contains("$"))!{
                 let value = button.tag.description
                 let existingText = numberDisplay.text ?? ""
                 numberDisplay.text = existingText + value
+                if period.isTouchInside {
+                    numberDisplay.text = existingText + "."
+                }
+                if clearButton.isTouchInside{
+                    numberDisplay.text = clearButton.tag.description
+                }
             }
         }
     }
@@ -124,7 +160,7 @@ class PayView: UIView {
     
     override init(frame: CGRect) {
         super.init(frame:UIScreen.main.bounds)
-        self.backgroundColor = .red
+        self.backgroundColor = .black
         constraintsButton()
     }
     
@@ -133,6 +169,8 @@ class PayView: UIView {
     }
     
     func constraintsButton(){
+        addSubview(clearButton)
+        addSubview(period)
         addSubview(button9)
         addSubview(button8)
         addSubview(button7)
@@ -143,13 +181,14 @@ class PayView: UIView {
         addSubview(button2)
         addSubview(button3)
         addSubview(button1)
+        addSubview(button0)
 //Button1
         button1.translatesAutoresizingMaskIntoConstraints = false
         button1.widthAnchor.constraint(equalToConstant: 140.0).isActive = true
         button1.heightAnchor.constraint(equalToConstant: 140.0).isActive = true
        ///button1.centerXAnchor.constraint(equalTo: centerXAnchor, constant: 0).isActive = true
         button1.trailingAnchor.constraint(equalTo: button2.leadingAnchor, constant: -1).isActive = true
-        button1.topAnchor.constraint(equalTo: numberDisplay.bottomAnchor, constant: 0).isActive = true
+        button1.topAnchor.constraint(equalTo: numberDisplay.bottomAnchor, constant: 1).isActive = true
         ///button1.bottomAnchor.constraint(equalTo: safeAreaLayoutGuide.bottomAnchor, constant: -11).isActive = true
 //Button2
         ///addSubview(button2)
@@ -157,7 +196,7 @@ class PayView: UIView {
         button2.widthAnchor.constraint(equalToConstant: 140.0).isActive = true
         button2.heightAnchor.constraint(equalToConstant: 140.0).isActive = true
         button2.centerXAnchor.constraint(equalTo: centerXAnchor, constant: 0).isActive = true
-        button2.topAnchor.constraint(equalTo: numberDisplay.bottomAnchor, constant: 0).isActive = true
+        button2.topAnchor.constraint(equalTo: numberDisplay.bottomAnchor, constant: 1).isActive = true
        // button2.leadingAnchor.constraint(equalTo: button1.trailingAnchor, constant: 11).isActive = true
         //button2.bottomAnchor.constraint(equalTo: safeAreaLayoutGuide.bottomAnchor, constant: -11).isActive = true
 //Button3
@@ -165,7 +204,7 @@ class PayView: UIView {
         button3.widthAnchor.constraint(equalToConstant: 140.0).isActive = true
         button3.heightAnchor.constraint(equalToConstant: 140.0).isActive = true
         button3.leadingAnchor.constraint(equalTo: button2.trailingAnchor, constant: 1).isActive = true
-        button3.topAnchor.constraint(equalTo: numberDisplay.bottomAnchor, constant: 0).isActive = true
+        button3.topAnchor.constraint(equalTo: numberDisplay.bottomAnchor, constant: 1).isActive = true
         //button3.bottomAnchor.constraint(equalTo: safeAreaLayoutGuide.bottomAnchor, constant: -11).isActive = true
         //NumberDiplay
         numberDisplay.translatesAutoresizingMaskIntoConstraints = false
@@ -210,5 +249,25 @@ class PayView: UIView {
         button9.widthAnchor.constraint(equalToConstant: 140.0).isActive = true
         button9.heightAnchor.constraint(equalToConstant: 140.0).isActive = true
         button9.leadingAnchor.constraint(equalTo: button8.trailingAnchor, constant: 1).isActive = true
+///////////////////////////////////////////////////////////////////////////////////////////
+//Button0
+        button0.translatesAutoresizingMaskIntoConstraints = false
+        button0.topAnchor.constraint(equalTo: button8.bottomAnchor, constant: 1).isActive = true
+        button0.widthAnchor.constraint(equalToConstant: 140.0).isActive = true
+        button0.heightAnchor.constraint(equalToConstant: 140.0).isActive = true
+       // button0.leadingAnchor.constraint(equalTo: button8.trailingAnchor, constant: 1).isActive = true
+        button0.centerXAnchor.constraint(equalTo: centerXAnchor, constant: 0).isActive = true
+//PeriodButton
+        period.translatesAutoresizingMaskIntoConstraints = false
+        period.topAnchor.constraint(equalTo: button7.bottomAnchor, constant: 1).isActive = true
+        period.widthAnchor.constraint(equalToConstant: 140.0).isActive = true
+        period.heightAnchor.constraint(equalToConstant: 140.0).isActive = true
+        period.trailingAnchor.constraint(equalTo: button0.leadingAnchor, constant: -1).isActive = true
+//ClearButton
+        clearButton.translatesAutoresizingMaskIntoConstraints = false
+        clearButton.topAnchor.constraint(equalTo: button9.bottomAnchor, constant: 1).isActive = true
+        clearButton.widthAnchor.constraint(equalToConstant: 140.0).isActive = true
+        clearButton.heightAnchor.constraint(equalToConstant: 140.0).isActive = true
+        clearButton.leadingAnchor.constraint(equalTo: button0.trailingAnchor, constant: 1).isActive = true
     }
 }
