@@ -56,6 +56,9 @@ class MainPageViewController: UIViewController {
                 gradient.frame = self.view.bounds
                 gradient.colors = [UIColor.magenta.cgColor,UIColor.red.cgColor,UIColor.purple.cgColor,UIColor.blue.cgColor]
                 self.view.layer.addSublayer(gradient)
+        navigationItem.title = "FellowsCC"
+       // view.addSubview(requestPayment)
+        //view.addSubview(recievePayment)
         view.backgroundColor = .white
 authService.authserviceSignOutDelegate = self
         navigationItem.rightBarButtonItem = UIBarButtonItem.init(image: UIImage.init(named: "send"), style: .done, target: self, action: #selector(sendMoney))
@@ -67,7 +70,7 @@ authService.authserviceSignOutDelegate = self
     }
     
     @objc func flipCreditCard(){
-        navigationController?.pushViewController(DetailAccountViewController(), animated: true)
+        navigationController?.pushViewController(MainDetailViewController(), animated: true)
     }
     
     @objc func sendMoney(){
