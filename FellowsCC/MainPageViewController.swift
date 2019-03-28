@@ -73,7 +73,7 @@ authService.authserviceSignOutDelegate = self
     }
     
     @objc func sendMoney(){
-    navigationController?.pushViewController(PaymentViewController(), animated: true)
+    navigationController?.pushViewController(FreindPaymentToViewController(), animated: true)
     }
     
     @objc func recieveMoney(){
