@@ -32,7 +32,8 @@ extension DBService {
                        UsersCollectionKeys.BalanceKey     : user.balance,
                        UsersCollectionKeys.BioKey         : user.bio ?? "",
                        UsersCollectionKeys.FirstNameKey   : user.firstName ?? "",
-                       UsersCollectionKeys.LastNameKey    : user.lastName ?? ""
+                       UsersCollectionKeys.LastNameKey    : user.lastName ?? "",
+                       UsersCollectionKeys.UserIdKey      : user.userId
             ]) { (error) in
                 if let error = error {
                     completion(error)
