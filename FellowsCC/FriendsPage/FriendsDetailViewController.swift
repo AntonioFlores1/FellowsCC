@@ -8,23 +8,43 @@
 
 import UIKit
 
-class FriendsDetailViewController: UIViewController {
 
+
+class FriendsDetailViewController: UIViewController {
+    private var tapGesture: UITapGestureRecognizer!
+    
+    private let authservice = AppDelegate.authservice
+    public var userDetail: CCUser!
+
+    var friendDetail = FriendDetailView()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        view.backgroundColor = .white
+        navigationItem.leftBarButtonItem = UIBarButtonItem.init(barButtonSystemItem: .cancel, target: self, action: #selector(cancelButtonClicked))
+        view.addSubview(friendDetail)
+        setuserImageUI()
+        
+        friendDetail.nameLabel.text = userDetail.displayName
+        friendDetail.bioDescriptionTextView.text = userDetail.bio
+        friendDetail.friendImageViewDetail.kf.setImage(with: URL(string: userDetail.photoURL!))
+        tapGesture = UITapGestureRecognizer(target: self, action: #selector(tapped(gestureRecognizer:)))
+        friendDetail.payButton.addGestureRecognizer(tapGesture)
+        friendDetail.payButton.isUserInteractionEnabled = true
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    @objc func cancelButtonClicked(){
+        dismiss(animated: true, completion: nil)
     }
-    */
-
+    
+     @objc func tapped(gestureRecognizer: UITapGestureRecognizer) {
+        print("eeeeeeeeeeee")
+    }
+    
+    private func setuserImageUI() {
+        friendDetail.friendImageViewDetail.layer.cornerRadius = 50
+        friendDetail.friendImageViewDetail.clipsToBounds = true
+        friendDetail.friendImageViewDetail.layer.borderColor = UIColor.black.cgColor
+        friendDetail.friendImageViewDetail.layer.borderWidth = 1
+    }
 }
