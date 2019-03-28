@@ -26,10 +26,12 @@ class DetailAccountViewController: UIViewController {
         view.addSubview(detailView)
         detailView.doneButton.addTarget(self, action: #selector(doneButtonPressed), for: .touchUpInside)
         detailView.profileImage.addTarget(self, action: #selector(profileButtonPressed), for: .touchUpInside)
-        updateUI()
-        
-
+        detailView.cancelButton.addTarget(self, action: #selector(cancelButtonPressed), for: .touchUpInside)
     }
+    override func viewWillAppear(_ animated: Bool) {
+        updateUI()
+    }
+    
     @objc func profileButtonPressed() {
         var actionTitles = [String]()
         if UIImagePickerController.isSourceTypeAvailable(.camera) {
@@ -79,6 +81,10 @@ class DetailAccountViewController: UIViewController {
                 })
         }
         showAlert(title: "Success", message: "Successfully saved account info")
+        dismiss(animated: true, completion: nil)
+    }
+    
+    @objc func cancelButtonPressed() {
         dismiss(animated: true, completion: nil)
     }
     
