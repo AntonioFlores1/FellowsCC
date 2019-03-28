@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		096DA6D6224C177F007590CC /* AccountSettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 096DA6D5224C177F007590CC /* AccountSettingsView.swift */; };
 		096DA6D8224C1798007590CC /* DetailAccountView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 096DA6D7224C1798007590CC /* DetailAccountView.swift */; };
+		096DA6DA224C472E007590CC /* StorageServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = 096DA6D9224C472E007590CC /* StorageServices.swift */; };
 		55178F7E224BDD9F001D6BB3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55178F7D224BDD9F001D6BB3 /* AppDelegate.swift */; };
 		55178F83224BDD9F001D6BB3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 55178F81224BDD9F001D6BB3 /* Main.storyboard */; };
 		55178F85224BDDA2001D6BB3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 55178F84224BDDA2001D6BB3 /* Assets.xcassets */; };
@@ -41,6 +42,7 @@
 /* Begin PBXFileReference section */
 		096DA6D5224C177F007590CC /* AccountSettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountSettingsView.swift; sourceTree = "<group>"; };
 		096DA6D7224C1798007590CC /* DetailAccountView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailAccountView.swift; sourceTree = "<group>"; };
+		096DA6D9224C472E007590CC /* StorageServices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageServices.swift; sourceTree = "<group>"; };
 		4EF7CF0150D6B7E408F81F22 /* Pods-FellowsCC.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FellowsCC.release.xcconfig"; path = "Target Support Files/Pods-FellowsCC/Pods-FellowsCC.release.xcconfig"; sourceTree = "<group>"; };
 		55178F7A224BDD9F001D6BB3 /* FellowsCC.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FellowsCC.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		55178F7D224BDD9F001D6BB3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -205,6 +207,7 @@
 				55178FB1224BF043001D6BB3 /* AuthSerice.swift */,
 				55178FB5224BF5B3001D6BB3 /* DBService.swift */,
 				55178FB3224BF587001D6BB3 /* DBService+User.swift */,
+				096DA6D9224C472E007590CC /* StorageServices.swift */,
 				55178FB7224BF5E2001D6BB3 /* CCUser.swift */,
 			);
 			path = "FireBase Files";
@@ -379,6 +382,7 @@
 				55178FC1224C016F001D6BB3 /* Extention+Navegation.swift in Sources */,
 				55178F9B224BDE96001D6BB3 /* FirendsCollectionViewCell.swift in Sources */,
 				55178F97224BDE5B001D6BB3 /* FriendsViewController.swift in Sources */,
+				096DA6DA224C472E007590CC /* StorageServices.swift in Sources */,
 				55178FB4224BF587001D6BB3 /* DBService+User.swift in Sources */,
 				55178FA6224BE010001D6BB3 /* AccountSettingsViewController.swift in Sources */,
 				55178FBB224BFB7A001D6BB3 /* Date+Ext.swift in Sources */,
