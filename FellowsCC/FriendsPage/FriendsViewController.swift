@@ -67,12 +67,6 @@ extension FriendsViewController: UICollectionViewDataSource, UICollectionViewDel
     }
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
          guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as? FirendsCollectionViewCell else {return UICollectionViewCell()}
-//        let listOfUser = friendList[indexPath.row]
-        print("the array is --->")
-        print(friendList)
-        print(indexPath.row)
-//        cell.nameLabel.text = listOfUser.fullName
-//        cell.bioLabel.text = listOfUser.bio
         
         
         cell.friendImageView.layer.borderWidth = 1
