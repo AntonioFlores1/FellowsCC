@@ -24,15 +24,18 @@ class PaymentViewController: UIViewController {
     }
     
    @objc func finalPayment(){
+    let finalDVC = FinalPaymentViewController()
     let amount = paymentRequest.numberDisplay
-    
-        navigationController?.pushViewController(FinalPaymentViewController(), animated: true)
+    let name = sendMoneyToPerson.fullName
+    finalDVC.amount.text = amount.text
+    finalDVC.to.text = "To " + name
+    navigationController?.pushViewController(finalDVC, animated: true)
     }
     
     lazy var titleStackView: UIStackView = {
         let titleLabel = UILabel()
         titleLabel.textAlignment = .center
-        titleLabel.text = "Send \(paymentRequest.numberDisplay.text!) to"
+        titleLabel.text = "Send amount to"
         let subtitleLabel = UILabel()
         subtitleLabel.textAlignment = .center
         subtitleLabel.text = "\(sendMoneyToPerson.fullName)"

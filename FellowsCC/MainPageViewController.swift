@@ -23,10 +23,6 @@ class MainPageViewController: UIViewController {
     
     lazy var companyName: UILabel = {
         let company = UILabel()
-//        let gradient = CAGradientLayer()
-//        gradient.frame = self.companyName.bounds
-//        gradient.colors = [UIColor.magenta.cgColor,UIColor.red.cgColor,UIColor.purple.cgColor,UIColor.blue.cgColor]
-//        self.view.layer.addSublayer(gradient)
         company.textColor = .white
         company.text = "Fellow"
         company.font = UIFont.systemFont(ofSize: 27)
@@ -56,8 +52,10 @@ class MainPageViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-       // view.addSubview(requestPayment)
-        //view.addSubview(recievePayment)
+                let gradient = CAGradientLayer()
+                gradient.frame = self.view.bounds
+                gradient.colors = [UIColor.magenta.cgColor,UIColor.red.cgColor,UIColor.purple.cgColor,UIColor.blue.cgColor]
+                self.view.layer.addSublayer(gradient)
         view.backgroundColor = .white
 authService.authserviceSignOutDelegate = self
         navigationItem.rightBarButtonItem = UIBarButtonItem.init(image: UIImage.init(named: "send"), style: .done, target: self, action: #selector(sendMoney))
@@ -77,13 +75,13 @@ authService.authserviceSignOutDelegate = self
     }
     
     @objc func recieveMoney(){
-    navigationController?.pushViewController(RequestViewController(), animated: true)
+    navigationController?.pushViewController(FreindPaymentToViewController(), animated: true)
 
     }
     func constriant(){
         self.view.addSubview(creditcardButton)
         creditcardButton.translatesAutoresizingMaskIntoConstraints = false
-        creditcardButton.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 60).isActive = true
+        //creditcardButton.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 60).isActive = true
         creditcardButton.heightAnchor.constraint(equalTo: view.heightAnchor, multiplier: 0.25).isActive = true
         creditcardButton.centerYAnchor.constraint(equalTo: view.centerYAnchor).isActive = true
         creditcardButton.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true

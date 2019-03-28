@@ -44,7 +44,7 @@ class FriendView: UIView {
         collectionView.topAnchor.constraint(equalTo: searchBar.bottomAnchor, constant: 1).isActive = true
         collectionView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 0).isActive = true
         collectionView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: 0).isActive = true
-        collectionView.heightAnchor.constraint(equalTo: heightAnchor, constant: -20).isActive = true
+//        collectionView.heightAnchor.constraint(equalTo: heightAnchor, constant: -20).isActive = true
         collectionView.bottomAnchor.constraint(equalTo: safeAreaLayoutGuide.bottomAnchor, constant: 0).isActive = true
     }
     func setSearch() {

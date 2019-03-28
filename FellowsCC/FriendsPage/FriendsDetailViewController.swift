@@ -38,7 +38,15 @@ class FriendsDetailViewController: UIViewController {
     }
     
      @objc func tapped(gestureRecognizer: UITapGestureRecognizer) {
-        print("eeeeeeeeeeee")
+        let paymentVC = PaymentViewController()
+        let user = userDetail
+        print("before")
+        paymentVC.sendMoneyToPerson = user
+        print("after")
+        paymentVC.modalTransitionStyle = .coverVertical
+        paymentVC.modalPresentationStyle = .currentContext
+        let nav = UINavigationController(rootViewController: paymentVC)
+        present(nav, animated: true, completion: nil)
     }
     
     private func setuserImageUI() {
