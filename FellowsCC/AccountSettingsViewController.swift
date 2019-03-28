@@ -41,9 +41,10 @@ class AccountSettingsViewController: UIViewController {
             if let error = error {
                 self?.showAlert(title: "Error Fetching Account", message: error.localizedDescription)
             } else if let user = user {
-                self?.accountSettings.displayName.text =  user.displayName
+                self?.accountSettings.displayName.text = "@" + user.displayName
                 self?.accountSettings.bioTextView.text = user.bio
                 self?.accountSettings.fullName.text = user.fullName
+                self?.userProfile = user
                 guard let photoURL = user.photoURL, !photoURL.isEmpty else {return}
                 self?.accountSettings.profileImage.kf.setImage(with: URL(string: photoURL), placeholder: UIImage(named: "placeholder"))
             }
@@ -51,6 +52,7 @@ class AccountSettingsViewController: UIViewController {
     }
     @objc func editProfileButtonPressed() {
         let detailvc = DetailAccountViewController()
+        detailvc.userProfile = self.userProfile
         self.present(detailvc, animated: true, completion: nil)
     }
     

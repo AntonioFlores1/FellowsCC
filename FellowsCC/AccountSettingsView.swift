@@ -21,26 +21,27 @@ class AccountSettingsView: UIView {
     
     lazy var displayName: UILabel = {
         let displayName = UILabel()
-        displayName.backgroundColor = .red
+        displayName.textAlignment = .center
         return displayName
     }()
     
     lazy var fullName: UILabel = {
         let fullName = UILabel()
-        fullName.backgroundColor = .blue
+        fullName.textAlignment = .center
         return fullName
     }()
     
     lazy var bioTextView: UITextView = {
         let textView = UITextView()
         textView.isEditable = false
-        textView.backgroundColor = .purple
+        textView.backgroundColor = .lightGray
         return textView
     }()
     
     lazy var editProfile: UIButton = {
         let button = UIButton()
-        button.backgroundColor = .magenta
+        button.setTitle("Edit", for: .normal)
+        button.setTitleColor(.blue, for: .normal)
         return button
     }()
 
@@ -55,6 +56,7 @@ class AccountSettingsView: UIView {
     }
     
     private func commonInit() {
+        backgroundColor = .white
         setupView()
     }
 }
@@ -66,6 +68,7 @@ extension AccountSettingsView {
         setupFullName()
         setupBio()
         setupEditProfile()
+    
         
     }
     
@@ -81,7 +84,7 @@ extension AccountSettingsView {
     private func setupDisplayName() {
         addSubview(displayName)
         displayName.translatesAutoresizingMaskIntoConstraints = false
-        displayName.topAnchor.constraint(equalTo: profileImage.bottomAnchor, constant: 8).isActive = true
+        displayName.topAnchor.constraint(equalTo: profileImage.bottomAnchor, constant: 15).isActive = true
         displayName.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 16).isActive = true
         displayName.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -16).isActive = true
         displayName.heightAnchor.constraint(equalToConstant: 20).isActive = true
@@ -90,7 +93,7 @@ extension AccountSettingsView {
     private func setupFullName() {
         addSubview(fullName)
         fullName.translatesAutoresizingMaskIntoConstraints = false
-        fullName.topAnchor.constraint(equalTo: displayName.bottomAnchor, constant: 8).isActive = true
+        fullName.topAnchor.constraint(equalTo: displayName.bottomAnchor, constant: 15).isActive = true
         fullName.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 16).isActive = true
         fullName.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -16).isActive = true
         fullName.heightAnchor.constraint(equalToConstant: 20).isActive = true
@@ -99,7 +102,7 @@ extension AccountSettingsView {
     private func setupBio() {
         addSubview(bioTextView)
         bioTextView.translatesAutoresizingMaskIntoConstraints = false
-        bioTextView.topAnchor.constraint(equalTo: fullName.bottomAnchor, constant: 8).isActive = true
+        bioTextView.topAnchor.constraint(equalTo: fullName.bottomAnchor, constant: 15).isActive = true
         bioTextView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 16).isActive = true
         bioTextView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -16).isActive = true
         bioTextView.heightAnchor.constraint(equalToConstant: 50).isActive = true
