@@ -17,7 +17,6 @@ class FriendsDetailViewController: UIViewController {
         view.backgroundColor = .white
         navigationItem.title = "Info"
         view.addSubview(friendDetail)
-        
     }
 
 }

@@ -11,7 +11,14 @@ import UIKit
 class FriendsViewController: UIViewController {
 
     var friendView = FriendView()
+    var friendDetailView = FriendDetailView()
     var friendCell = FirendsCollectionViewCell()
+    var filteredCandies = [CCUser]()
+    
+    var name = String()
+    var bioDescription = String()
+    
+    let searchController = UISearchController(searchResultsController: nil)
     
     var friendList = [CCUser]() {
         didSet {
@@ -21,39 +28,41 @@ class FriendsViewController: UIViewController {
         }
     }
 
-    lazy var searchBar: UISearchBar = {
-        let bar = UISearchBar()
-        bar.translatesAutoresizingMaskIntoConstraints = false
-        return bar
-    }()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.view.backgroundColor = .black
         navigationItem.title = "Friend List"
         view.addSubview(friendView)
-        setSearchBar()
-        searchBar.returnKeyType = UIReturnKeyType.done
         friendView.collectionView.delegate = self
         friendView.collectionView.dataSource = self
-    }
-    private func setSearchBar() {
-        view.addSubview(searchBar)
-        searchBar.topAnchor.constraint(equalTo: view.topAnchor, constant: 100).isActive = true
-        searchBar.heightAnchor.constraint(equalToConstant: 50).isActive = true
-        searchBar.leftAnchor.constraint(equalTo: view.leftAnchor).isActive = true
-        searchBar.rightAnchor.constraint(equalTo: view.rightAnchor).isActive = true
+        friendDetailView.nameLabel.text = name
+        friendDetailView.bioDescriptionTextView.text = bioDescription
+        
+        searchController.searchResultsUpdater = self
+        searchController.obscuresBackgroundDuringPresentation = false
+        searchController.searchBar.placeholder = "Search Candies"
+        navigationItem.searchController = searchController
+        definesPresentationContext = true
     }
 }
 
-extension FriendsViewController: UICollectionViewDataSource, UICollectionViewDelegate {
+extension FriendsViewController: UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return 10
     }
-    
+    func numberOfSections(in collectionView: UICollectionView) -> Int {
+        return 1
+    }
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
          guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as? FirendsCollectionViewCell else {return UICollectionViewCell()}
-        cell.layer.cornerRadius = 30
+        
+        
+        cell.friendImageView.layer.borderWidth = 1
+        cell.friendImageView.layer.masksToBounds = false
+        cell.friendImageView.layer.borderColor = UIColor.black.cgColor
+        cell.friendImageView.layer.cornerRadius = cell.friendImageView.frame.height/2
+        cell.friendImageView.clipsToBounds = true
         return cell
     }
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
@@ -61,8 +70,10 @@ extension FriendsViewController: UICollectionViewDataSource, UICollectionViewDel
     }
 }
 
-extension FriendsViewController: UISearchBarDelegate {
-    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
-        
+
+extension FriendsViewController: UISearchResultsUpdating {
+    // MARK: - UISearchResultsUpdating Delegate
+    func updateSearchResults(for searchController: UISearchController) {
+        // TODO
     }
 }

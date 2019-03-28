@@ -13,7 +13,7 @@ class FriendView: UIView {
     lazy var collectionView: UICollectionView = { //
         let layout = UICollectionViewFlowLayout()
         layout.itemSize = CGSize.init(width: 400, height: 100)
-        layout.sectionInset = UIEdgeInsets.init(top: 60, left: 10, bottom: 30, right: 10)
+        layout.sectionInset = UIEdgeInsets.init(top: 30, left: 10, bottom: 30, right: 10)
         layout.scrollDirection = .vertical
         let myCV = UICollectionView.init(frame: self.bounds, collectionViewLayout: layout)
         myCV.backgroundColor = .white

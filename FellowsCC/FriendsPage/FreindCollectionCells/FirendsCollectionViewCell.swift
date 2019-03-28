@@ -66,13 +66,14 @@ class FirendsCollectionViewCell: UICollectionViewCell {
     func setNameLable() {
         nameLabel.translatesAutoresizingMaskIntoConstraints = false
         nameLabel.leadingAnchor.constraint(equalTo: friendImageView.leadingAnchor, constant: 10).isActive = true
+        nameLabel.topAnchor.constraint(equalToSystemSpacingBelow: topAnchor, multiplier: 5).isActive = true
         nameLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 1).isActive = true
         nameLabel.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -11).isActive = true
     }
 
     func setBioConstraints() {
         bioLabel.translatesAutoresizingMaskIntoConstraints = false
-        bioLabel.topAnchor.constraint(equalTo: nameLabel.bottomAnchor, constant: 15).isActive = true
+        bioLabel.topAnchor.constraint(equalTo: nameLabel.bottomAnchor, constant: 5).isActive = true
         bioLabel.leadingAnchor.constraint(equalTo: leadingAnchor).isActive = true
         bioLabel.trailingAnchor.constraint(equalTo: trailingAnchor).isActive = true
     }
