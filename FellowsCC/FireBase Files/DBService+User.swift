@@ -55,4 +55,21 @@ extension DBService {
                 }
         }
     }
+    
+    static public func searchUser(completion: @escaping(Error?, [CCUser]?) -> Void) {
+        DBService.firestoreDB.collection(UsersCollectionKeys.CollectionKey)
+            .getDocuments { (snapshot, error) in
+                if let error = error {
+                    completion(error, nil)
+                }
+                if let snapshot = snapshot {
+                    var bloggersArray = [CCUser]()
+                    for document in snapshot.documents {
+                        let searchBlogger = CCUser.init(dict: document.data())
+                        bloggersArray.append(searchBlogger)
+                    }
+                    completion(nil, bloggersArray)
+                }
+        }
+    }
 }

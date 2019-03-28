@@ -9,7 +9,7 @@
 import UIKit
 
 class FriendDetailView: UIView {
-    
+ 
     
     lazy var friendImageViewDetail: UIImageView = {
         var image = UIImageView()
@@ -41,7 +41,6 @@ class FriendDetailView: UIView {
         return button
     }()
     @objc func payButtonPress() {
-         print("was press")
     }
     
     lazy var requestButton: UIButton = {
@@ -99,10 +98,10 @@ class FriendDetailView: UIView {
     }
     func bioTextViewConstraints() {
         bioDescriptionTextView.translatesAutoresizingMaskIntoConstraints = false
-        bioDescriptionTextView.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor, constant: 220).isActive = true
+        bioDescriptionTextView.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor, constant: 350).isActive = true
         bioDescriptionTextView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 40).isActive = true
         bioDescriptionTextView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -10).isActive = true
-        bioDescriptionTextView.heightAnchor.constraint(equalTo: heightAnchor, multiplier: 0.4).isActive = true
+        bioDescriptionTextView.heightAnchor.constraint(equalTo: heightAnchor, multiplier: 0.1).isActive = true
     }
     func setPayButton() {
         payButton.translatesAutoresizingMaskIntoConstraints = false

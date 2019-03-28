@@ -9,16 +9,16 @@
 import UIKit
 
 class FriendsViewController: UIViewController {
+    let searchController = UISearchController(searchResultsController: nil)
 
     var friendView = FriendView()
     var friendDetailView = FriendDetailView()
     var friendCell = FirendsCollectionViewCell()
     var filteredCandies = [CCUser]()
+    private var authservice = AppDelegate.authservice
     
     var name = String()
     var bioDescription = String()
-    
-    let searchController = UISearchController(searchResultsController: nil)
     
     var friendList = [CCUser]() {
         didSet {
@@ -41,9 +41,23 @@ class FriendsViewController: UIViewController {
         
         searchController.searchResultsUpdater = self
         searchController.obscuresBackgroundDuringPresentation = false
-        searchController.searchBar.placeholder = "Search Candies"
+        searchController.searchBar.placeholder = "Search Friends"
         navigationItem.searchController = searchController
         definesPresentationContext = true
+    }
+    
+    func searchForUser(user: String) {
+        DBService.searchUser { (error, ccUser) in
+            if let error = error {
+                self.showAlert(title: "Error is:", message: error.localizedDescription)
+            } else if let ccUser = ccUser {
+                self.friendList = ccUser.filter{($0.firstName!.lowercased().contains(user.lowercased())) ||
+                    (($0.displayName.lowercased().contains(user.lowercased()))) ||
+                    (($0.lastName!.lowercased().contains(user.lowercased()))) ||
+                    ((($0.firstName!.lowercased()+" "+$0.lastName!.lowercased()).contains(user.lowercased())))
+                }
+            }
+        }
     }
 }
 
@@ -51,11 +65,14 @@ extension FriendsViewController: UICollectionViewDataSource, UICollectionViewDel
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return 10
     }
-    func numberOfSections(in collectionView: UICollectionView) -> Int {
-        return 1
-    }
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
          guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as? FirendsCollectionViewCell else {return UICollectionViewCell()}
+//        let listOfUser = friendList[indexPath.row]
+        print("the array is --->")
+        print(friendList)
+        print(indexPath.row)
+//        cell.nameLabel.text = listOfUser.fullName
+//        cell.bioLabel.text = listOfUser.bio
         
         
         cell.friendImageView.layer.borderWidth = 1
@@ -70,10 +87,13 @@ extension FriendsViewController: UICollectionViewDataSource, UICollectionViewDel
     }
 }
 
-
-extension FriendsViewController: UISearchResultsUpdating {
-    // MARK: - UISearchResultsUpdating Delegate
+extension FriendsViewController:  UISearchResultsUpdating {
     func updateSearchResults(for searchController: UISearchController) {
-        // TODO
+        
+    }
+}
+extension FriendsViewController: UISearchBarDelegate {
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        searchForUser(user: searchText)
     }
 }
