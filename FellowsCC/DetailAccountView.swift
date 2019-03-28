@@ -12,7 +12,8 @@ class DetailAccountView: UIView {
 
     lazy var profileImage: UIButton = {
         let image = UIButton()
-        image.setImage(UIImage(named: "placeholder"), for: .normal)
+        image.setImage( #imageLiteral(resourceName: "placeholder.png"), for: .normal)
+        image.backgroundColor = .brown
         return image
     }()
     
