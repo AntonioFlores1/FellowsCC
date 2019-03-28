@@ -12,37 +12,53 @@ class DetailAccountView: UIView {
 
     lazy var profileImage: UIButton = {
         let image = UIButton()
+        image.setImage( #imageLiteral(resourceName: "placeholder.png"), for: .normal)
+        image.backgroundColor = .brown
         return image
     }()
     
     lazy var displayName: UITextField = {
         let displayName = UITextField()
-        displayName.backgroundColor = .red
+        displayName.borderStyle = UITextField.BorderStyle.roundedRect
+        displayName.textAlignment = .center
+        displayName.placeholder = "Enter display name here"
         return displayName
     }()
     
     lazy var firstName: UITextField = {
         let firstName = UITextField()
-        firstName.backgroundColor = .blue
+        firstName.textAlignment = .center
+        firstName.borderStyle = UITextField.BorderStyle.roundedRect
+        firstName.placeholder = "Enter first name here"
         return firstName
     }()
     
     lazy var lastName: UITextField = {
         let lastName = UITextField()
-        lastName.backgroundColor = .blue
+        lastName.borderStyle = UITextField.BorderStyle.roundedRect
+        lastName.textAlignment = .center
+        lastName.placeholder = "Enter last name here"
         return lastName
     }()
     
     lazy var bioTextView: UITextView = {
         let textView = UITextView()
-        textView.backgroundColor = .purple
+        textView.backgroundColor = .lightGray
         return textView
     }()
     
     lazy var doneButton: UIButton = {
         let button = UIButton()
-        button.backgroundColor = .orange
+        button.setTitle("Save", for: .normal)
+        button.setTitleColor(.blue, for: .normal)
         return button
+    }()
+    
+    lazy var cancelButton: UIButton = {
+        let cbutton = UIButton()
+        cbutton.setTitle("Cancel", for: .normal)
+        cbutton.setTitleColor(.red, for: .normal)
+        return cbutton
     }()
 
     
@@ -70,7 +86,7 @@ extension DetailAccountView {
         setupLastName()
         setupBio()
         setupDoneButton()
-        
+        setupCancelButton()
     }
     
     private func setupProfileImage() {
@@ -125,6 +141,15 @@ extension DetailAccountView {
         doneButton.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 16).isActive = true
         doneButton.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -16).isActive = true
         doneButton.heightAnchor.constraint(equalToConstant: 30).isActive = true
+    }
+    
+    private func setupCancelButton() {
+        addSubview(cancelButton)
+        cancelButton.translatesAutoresizingMaskIntoConstraints = false
+        cancelButton.topAnchor.constraint(equalTo: doneButton.bottomAnchor, constant: 15).isActive = true
+        cancelButton.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 16).isActive = true
+        cancelButton.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -16).isActive = true
+        cancelButton.heightAnchor.constraint(equalToConstant: 30).isActive = true
     }
     
 }

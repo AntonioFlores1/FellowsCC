@@ -12,29 +12,31 @@ class FirendsCollectionViewCell: UICollectionViewCell {
     
     lazy var friendImageView: UIImageView = {
         var image = UIImageView()
-        image.backgroundColor = .black
+        image.image = UIImage(named: "placeholder")
+        image.layer.cornerRadius = image.frame.width/2
+        image.clipsToBounds = true
         return image
     }()
     
     lazy var  nameLabel: UILabel = {
         let label = UILabel()
-        label.textColor = .red
-        label.text = "Hola this is me"
+        label.textColor = .black
         label.textAlignment = .center
+        label.font = UIFont.systemFont(ofSize: 16)
         return label
     }()
     
     lazy var  bioLabel: UILabel = {
         let label = UILabel()
-        label.textColor = .red
-        label.text = "THis is the Bio"
+        label.textColor = .black
         label.textAlignment = .center
+        label.font = UIFont.systemFont(ofSize: 16)
         return label
     }()
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-        backgroundColor = .yellow
+        backgroundColor = .white
         commonInit()
         setUpViewConstraints()
     }
@@ -57,7 +59,7 @@ class FirendsCollectionViewCell: UICollectionViewCell {
     func imageConstraints() {
         friendImageView.translatesAutoresizingMaskIntoConstraints = false
         friendImageView.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor, constant: 10).isActive = true
-        friendImageView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 11).isActive = true
+        friendImageView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 20).isActive = true
         friendImageView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -300).isActive = true
         friendImageView.bottomAnchor.constraint(equalTo: safeAreaLayoutGuide.bottomAnchor, constant: -10).isActive = true
         friendImageView.widthAnchor.constraint(equalToConstant: 100).isActive = true

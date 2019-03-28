@@ -14,7 +14,7 @@ class FriendDetailView: UIView {
     lazy var friendImageViewDetail: UIImageView = {
         var image = UIImageView()
         image = UIImageView()
-        image.backgroundColor = .black
+        image.image = UIImage(named: "placeholder")
         return image
     }()
     
@@ -30,6 +30,7 @@ class FriendDetailView: UIView {
         var bioTextView = UILabel()
         bioTextView.text = "Here we go..................."
         bioTextView.textColor = .black
+        bioTextView.numberOfLines = 8
         return bioTextView
     }()
     

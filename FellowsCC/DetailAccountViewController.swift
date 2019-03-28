@@ -24,12 +24,15 @@ class DetailAccountViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         view.addSubview(detailView)
+        
         detailView.doneButton.addTarget(self, action: #selector(doneButtonPressed), for: .touchUpInside)
         detailView.profileImage.addTarget(self, action: #selector(profileButtonPressed), for: .touchUpInside)
-        updateUI()
-        
-
+        detailView.cancelButton.addTarget(self, action: #selector(cancelButtonPressed), for: .touchUpInside)
     }
+    override func viewWillAppear(_ animated: Bool) {
+        updateUI()
+    }
+    
     @objc func profileButtonPressed() {
         var actionTitles = [String]()
         if UIImagePickerController.isSourceTypeAvailable(.camera) {
@@ -82,9 +85,21 @@ class DetailAccountViewController: UIViewController {
         dismiss(animated: true, completion: nil)
     }
     
+    @objc func cancelButtonPressed() {
+        dismiss(animated: true, completion: nil)
+    }
+    
     private func updateUI() {
         if let userProfile = userProfile {
-            detailView.profileImage.kf.setImage(with: URL(string: userProfile.photoURL!), for: .normal)
+            if let photoURL = userProfile.photoURL, !photoURL.isEmpty {
+                detailView.profileImage.kf.setImage(with: URL(string: userProfile.photoURL!), for: .normal)
+            } else {
+                if let image = selectedImage {
+                    detailView.profileImage.setImage(image, for: .normal)
+                } else {
+                    detailView.profileImage.setImage(UIImage(named: "placeholder"), for: .normal)
+                }
+            }
             detailView.firstName.text = userProfile.firstName
             detailView.lastName.text = userProfile.lastName
             detailView.displayName.text = userProfile.displayName

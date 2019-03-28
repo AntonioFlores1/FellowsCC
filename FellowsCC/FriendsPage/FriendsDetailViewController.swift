@@ -8,39 +8,37 @@
 
 import UIKit
 
+
+
 class FriendsDetailViewController: UIViewController {
     private var tapGesture: UITapGestureRecognizer!
     
-   
     private let authservice = AppDelegate.authservice
+    public var userDetail: CCUser!
 
     var friendDetail = FriendDetailView()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .white
-        navigationItem.title = "Info"
+        navigationItem.leftBarButtonItem = UIBarButtonItem.init(barButtonSystemItem: .cancel, target: self, action: #selector(cancelButtonClicked))
         view.addSubview(friendDetail)
         setuserImageUI()
         
+        friendDetail.nameLabel.text = userDetail.displayName
+        friendDetail.bioDescriptionTextView.text = userDetail.bio
+        friendDetail.friendImageViewDetail.kf.setImage(with: URL(string: userDetail.photoURL!))
         tapGesture = UITapGestureRecognizer(target: self, action: #selector(tapped(gestureRecognizer:)))
         friendDetail.payButton.addGestureRecognizer(tapGesture)
         friendDetail.payButton.isUserInteractionEnabled = true
     }
+    
+    @objc func cancelButtonClicked(){
+        dismiss(animated: true, completion: nil)
+    }
+    
      @objc func tapped(gestureRecognizer: UITapGestureRecognizer) {
         print("eeeeeeeeeeee")
-        let controller = UIAlertController(title: "You had choose to send money to", message: nil, preferredStyle: .alert)
-        controller.addTextField { (payment) in
-            payment.placeholder = "Enter amount"
-            payment.keyboardType = UIKeyboardType.emailAddress
-        }
-        let pay = UIAlertAction(title: "Pay", style: .default) { (action) in
-        }
-        let cancel = UIAlertAction(title: "Cancel", style: .cancel) { (action) in
-        }
-        controller.addAction(pay)
-        controller.addAction(cancel)
-        present(controller,animated: true)
     }
     
     private func setuserImageUI() {
