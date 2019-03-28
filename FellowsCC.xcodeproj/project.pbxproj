@@ -33,6 +33,8 @@
 		55178FC1224C016F001D6BB3 /* Extention+Navegation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55178FC0224C016F001D6BB3 /* Extention+Navegation.swift */; };
 		55178FC3224C01AD001D6BB3 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55178FC2224C01AD001D6BB3 /* TabBarController.swift */; };
 		55178FC7224C070A001D6BB3 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 55178FC6224C070A001D6BB3 /* GoogleService-Info.plist */; };
+		67FD3B2C224C179A00088228 /* FriendView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67FD3B2B224C179A00088228 /* FriendView.swift */; };
+		67FD3B2E224C3A1900088228 /* FriendDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67FD3B2D224C3A1900088228 /* FriendDetailView.swift */; };
 		A4E48C49E04BBC7D07D6E63F /* Pods_FellowsCC.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B39D3DDACFCCDAAF54E3D02A /* Pods_FellowsCC.framework */; };
 /* End PBXBuildFile section */
 
@@ -66,6 +68,8 @@
 		55178FC0224C016F001D6BB3 /* Extention+Navegation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extention+Navegation.swift"; sourceTree = "<group>"; };
 		55178FC2224C01AD001D6BB3 /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
 		55178FC6224C070A001D6BB3 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		67FD3B2B224C179A00088228 /* FriendView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendView.swift; sourceTree = "<group>"; };
+		67FD3B2D224C3A1900088228 /* FriendDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendDetailView.swift; sourceTree = "<group>"; };
 		74BA1614CD8E68AA494A4AFC /* Pods-FellowsCC.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FellowsCC.debug.xcconfig"; path = "Target Support Files/Pods-FellowsCC/Pods-FellowsCC.debug.xcconfig"; sourceTree = "<group>"; };
 		B39D3DDACFCCDAAF54E3D02A /* Pods_FellowsCC.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FellowsCC.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -117,6 +121,8 @@
 				55178FA9224BEF5B001D6BB3 /* LoginSetUp */,
 				55178F8F224BDDB3001D6BB3 /* Main Page */,
 				55178F90224BDDC8001D6BB3 /* FriendsPage */,
+				67FD3B2B224C179A00088228 /* FriendView.swift */,
+				67FD3B2D224C3A1900088228 /* FriendDetailView.swift */,
 				55178FA2224BDF20001D6BB3 /* Pay/RequestView */,
 				55178F91224BDDE4001D6BB3 /* Settings */,
 				55178F81224BDD9F001D6BB3 /* Main.storyboard */,
@@ -379,11 +385,13 @@
 				55178FA8224BE02C001D6BB3 /* DetailAccountViewController.swift in Sources */,
 				55178F93224BDE0A001D6BB3 /* MainPageViewController.swift in Sources */,
 				55178F7E224BDD9F001D6BB3 /* AppDelegate.swift in Sources */,
+				67FD3B2E224C3A1900088228 /* FriendDetailView.swift in Sources */,
 				55178FAD224BEF86001D6BB3 /* CreateViewController.swift in Sources */,
 				55178FA1224BDF1C001D6BB3 /* PayView.swift in Sources */,
 				55178F9E224BDEE1001D6BB3 /* HistroyDetailTableViewCell.swift in Sources */,
 				55178FC3224C01AD001D6BB3 /* TabBarController.swift in Sources */,
 				55178FB2224BF043001D6BB3 /* AuthSerice.swift in Sources */,
+				67FD3B2C224C179A00088228 /* FriendView.swift in Sources */,
 				55178F99224BDE79001D6BB3 /* FriendsDetailViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
