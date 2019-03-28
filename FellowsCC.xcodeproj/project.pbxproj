@@ -17,7 +17,7 @@
 		55178F99224BDE79001D6BB3 /* FriendsDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55178F98224BDE79001D6BB3 /* FriendsDetailViewController.swift */; };
 		55178F9B224BDE96001D6BB3 /* FirendsCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55178F9A224BDE96001D6BB3 /* FirendsCollectionViewCell.swift */; };
 		55178F9E224BDEE1001D6BB3 /* HistroyDetailTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55178F9D224BDEE1001D6BB3 /* HistroyDetailTableViewCell.swift */; };
-		55178FA1224BDF1C001D6BB3 /* PayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55178FA0224BDF1C001D6BB3 /* PayView.swift */; };
+		55178FA1224BDF1C001D6BB3 /* PaymentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55178FA0224BDF1C001D6BB3 /* PaymentView.swift */; };
 		55178FA4224BDF3D001D6BB3 /* RequestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55178FA3224BDF3D001D6BB3 /* RequestView.swift */; };
 		55178FA6224BE010001D6BB3 /* AccountSettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55178FA5224BE010001D6BB3 /* AccountSettingsViewController.swift */; };
 		55178FA8224BE02C001D6BB3 /* DetailAccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55178FA7224BE02C001D6BB3 /* DetailAccountViewController.swift */; };
@@ -33,6 +33,8 @@
 		55178FC1224C016F001D6BB3 /* Extention+Navegation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55178FC0224C016F001D6BB3 /* Extention+Navegation.swift */; };
 		55178FC3224C01AD001D6BB3 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55178FC2224C01AD001D6BB3 /* TabBarController.swift */; };
 		55178FC7224C070A001D6BB3 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 55178FC6224C070A001D6BB3 /* GoogleService-Info.plist */; };
+		5587785E224CE554005E62A7 /* PaymentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5587785D224CE554005E62A7 /* PaymentViewController.swift */; };
+		55877860224CE56F005E62A7 /* RequestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5587785F224CE56F005E62A7 /* RequestViewController.swift */; };
 		A4E48C49E04BBC7D07D6E63F /* Pods_FellowsCC.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B39D3DDACFCCDAAF54E3D02A /* Pods_FellowsCC.framework */; };
 /* End PBXBuildFile section */
 
@@ -50,7 +52,7 @@
 		55178F98224BDE79001D6BB3 /* FriendsDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendsDetailViewController.swift; sourceTree = "<group>"; };
 		55178F9A224BDE96001D6BB3 /* FirendsCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirendsCollectionViewCell.swift; sourceTree = "<group>"; };
 		55178F9D224BDEE1001D6BB3 /* HistroyDetailTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistroyDetailTableViewCell.swift; sourceTree = "<group>"; };
-		55178FA0224BDF1C001D6BB3 /* PayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PayView.swift; sourceTree = "<group>"; };
+		55178FA0224BDF1C001D6BB3 /* PaymentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentView.swift; sourceTree = "<group>"; };
 		55178FA3224BDF3D001D6BB3 /* RequestView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestView.swift; sourceTree = "<group>"; };
 		55178FA5224BE010001D6BB3 /* AccountSettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountSettingsViewController.swift; sourceTree = "<group>"; };
 		55178FA7224BE02C001D6BB3 /* DetailAccountViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailAccountViewController.swift; sourceTree = "<group>"; };
@@ -66,6 +68,8 @@
 		55178FC0224C016F001D6BB3 /* Extention+Navegation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extention+Navegation.swift"; sourceTree = "<group>"; };
 		55178FC2224C01AD001D6BB3 /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
 		55178FC6224C070A001D6BB3 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		5587785D224CE554005E62A7 /* PaymentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentViewController.swift; sourceTree = "<group>"; };
+		5587785F224CE56F005E62A7 /* RequestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestViewController.swift; sourceTree = "<group>"; };
 		74BA1614CD8E68AA494A4AFC /* Pods-FellowsCC.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FellowsCC.debug.xcconfig"; path = "Target Support Files/Pods-FellowsCC/Pods-FellowsCC.debug.xcconfig"; sourceTree = "<group>"; };
 		B39D3DDACFCCDAAF54E3D02A /* Pods_FellowsCC.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FellowsCC.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -177,7 +181,9 @@
 		55178FA2224BDF20001D6BB3 /* Pay/RequestView */ = {
 			isa = PBXGroup;
 			children = (
-				55178FA0224BDF1C001D6BB3 /* PayView.swift */,
+				55178FA0224BDF1C001D6BB3 /* PaymentView.swift */,
+				5587785D224CE554005E62A7 /* PaymentViewController.swift */,
+				5587785F224CE56F005E62A7 /* RequestViewController.swift */,
 				55178FA3224BDF3D001D6BB3 /* RequestView.swift */,
 			);
 			name = Pay/RequestView;
@@ -377,10 +383,12 @@
 				55178FA6224BE010001D6BB3 /* AccountSettingsViewController.swift in Sources */,
 				55178FBB224BFB7A001D6BB3 /* Date+Ext.swift in Sources */,
 				55178FA8224BE02C001D6BB3 /* DetailAccountViewController.swift in Sources */,
+				55877860224CE56F005E62A7 /* RequestViewController.swift in Sources */,
 				55178F93224BDE0A001D6BB3 /* MainPageViewController.swift in Sources */,
 				55178F7E224BDD9F001D6BB3 /* AppDelegate.swift in Sources */,
 				55178FAD224BEF86001D6BB3 /* CreateViewController.swift in Sources */,
-				55178FA1224BDF1C001D6BB3 /* PayView.swift in Sources */,
+				55178FA1224BDF1C001D6BB3 /* PaymentView.swift in Sources */,
+				5587785E224CE554005E62A7 /* PaymentViewController.swift in Sources */,
 				55178F9E224BDEE1001D6BB3 /* HistroyDetailTableViewCell.swift in Sources */,
 				55178FC3224C01AD001D6BB3 /* TabBarController.swift in Sources */,
 				55178FB2224BF043001D6BB3 /* AuthSerice.swift in Sources */,
