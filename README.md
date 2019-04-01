@@ -7,8 +7,10 @@ This app is a cryptocurrency banking app. The app allows users to send money to 
 ## Gifs
 
 ## Contributors
-### Team Members and Github links
-Antonio Flores:  https://github.com/AntonioFlores1
-Matthew Huie: https://github.com/MattHuie
-Jose Alarcon Chacon:  https://github.com/josealarconchacon
+### Antonio Flores 
+https://github.com/AntonioFlores1
+### Matthew Huie
+https://github.com/MattHuie
+### Jose Alarcon Chacon
+https://github.com/josealarconchacon
 
