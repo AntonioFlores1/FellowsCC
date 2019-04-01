@@ -32,7 +32,8 @@ extension DBService {
                        UsersCollectionKeys.BalanceKey     : user.balance,
                        UsersCollectionKeys.BioKey         : user.bio ?? "",
                        UsersCollectionKeys.FirstNameKey   : user.firstName ?? "",
-                       UsersCollectionKeys.LastNameKey    : user.lastName ?? ""
+                       UsersCollectionKeys.LastNameKey    : user.lastName ?? "",
+                       UsersCollectionKeys.UserIdKey      : user.userId
             ]) { (error) in
                 if let error = error {
                     completion(error)
@@ -52,6 +53,23 @@ extension DBService {
                 } else if let snapshot = snapshot?.documents.first {
                     let userProfileCreator = CCUser(dict: snapshot.data())
                     completion(nil, userProfileCreator)
+                }
+        }
+    }
+    
+    static public func searchUser(completion: @escaping(Error?, [CCUser]?) -> Void) {
+        DBService.firestoreDB.collection(UsersCollectionKeys.CollectionKey)
+            .getDocuments { (snapshot, error) in
+                if let error = error {
+                    completion(error, nil)
+                }
+                if let snapshot = snapshot {
+                    var bloggersArray = [CCUser]()
+                    for document in snapshot.documents {
+                        let searchBlogger = CCUser.init(dict: document.data())
+                        bloggersArray.append(searchBlogger)
+                    }
+                    completion(nil, bloggersArray)
                 }
         }
     }
