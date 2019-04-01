@@ -26,7 +26,7 @@ class PaymentToCollectionViewCell: UICollectionViewCell {
         
         lazy var  bioLabel: UILabel = {
             let label = UILabel()
-            label.textColor = .red
+            label.textColor = .black
             label.text = "THis is the Bio"
             label.textAlignment = .center
             return label
@@ -74,7 +74,8 @@ class PaymentToCollectionViewCell: UICollectionViewCell {
         func setBioConstraints() {
             bioLabel.translatesAutoresizingMaskIntoConstraints = false
             bioLabel.topAnchor.constraint(equalTo: nameLabel.bottomAnchor, constant: 5).isActive = true
-            bioLabel.leadingAnchor.constraint(equalTo: leadingAnchor).isActive = true
+            bioLabel.leadingAnchor.constraint(equalTo: friendImageView.trailingAnchor, constant: 11).isActive = true
+            //bioLabel.leadingAnchor.constraint(equalTo: leadingAnchor).isActive = true
             bioLabel.trailingAnchor.constraint(equalTo: trailingAnchor).isActive = true
         }
     }

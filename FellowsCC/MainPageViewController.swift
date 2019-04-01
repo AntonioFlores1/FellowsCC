@@ -13,6 +13,28 @@ class MainPageViewController: UIViewController {
     
     private var authService = AppDelegate.authservice
     
+    
+    
+    private func updateProfile() {
+        guard let user = authService.getCurrentUser() else {
+            print("no logged user")
+            return
+        }
+        DBService.fetchUser(userId: user.uid) { [weak self] (error, user) in
+            if let error = error {
+                self?.showAlert(title: "Error Fetching Account", message: error.localizedDescription)
+            } else if let user = user {
+                self?.cardName.text = "@" + user.displayName
+//                self?.accountSettings.displayName.text = "@" + user.displayName
+//                self?.accountSettings.bioTextView.text = user.bio
+//                self?.accountSettings.fullName.text = user.fullName
+//                self?.userProfile = user
+//                guard let photoURL = user.photoURL, !photoURL.isEmpty else {return}
+//                self?.accountSettings.profileImage.kf.setImage(with: URL(string: photoURL), placeholder: UIImage(named: "placeholder"))
+            }
+        }
+    }
+    
     lazy var balance: UILabel = {
         let balance = UILabel()
         balance.text = "1892.94"
@@ -52,6 +74,7 @@ class MainPageViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        updateProfile()
                 let gradient = CAGradientLayer()
                 gradient.frame = self.view.bounds
                 gradient.colors = [UIColor.magenta.cgColor,UIColor.red.cgColor,UIColor.purple.cgColor,UIColor.blue.cgColor]
@@ -70,7 +93,12 @@ authService.authserviceSignOutDelegate = self
     }
     
     @objc func flipCreditCard(){
-        navigationController?.pushViewController(MainDetailViewController(), animated: true)
+    let dc = MainDetailViewController()
+        dc.modalTransitionStyle = .flipHorizontal
+        dc.modalPresentationStyle = .currentContext
+        let nav = UINavigationController(rootViewController: dc)
+    present(nav, animated: true, completion: nil)
+//        navigationController?.pushViewController(MainDetailViewController(), animated: true)
     }
     
     @objc func sendMoney(){

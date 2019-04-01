@@ -48,23 +48,61 @@ class FinalPaymentViewController: UIViewController {
         let button = UIButton()
         button.setTitle("Send Payment", for: .normal)
         button.addTarget(self, action: #selector(finish), for: .touchUpInside )
+        button.setTitleColor(.white, for: .normal)
         return button
     }()
     
+    lazy var ana: UIButton = {
+        let button = UIButton()
+//        let gradient = CAGradientLayer()
+//        gradient.frame = self.ana.bounds
+//        gradient.colors = [UIColor.magenta.cgColor,UIColor.red.cgColor,UIColor.purple.cgColor,UIColor.blue.cgColor]
+//        button.layer.addSublayer(gradient)
+        //self.view.layer.addSublayer(gradient)
+        button.setTitle("Send Payment", for: .normal)
+        button.setTitleColor(.red, for: .normal)
+        button.backgroundColor = .red
+//        button.setTitleColor(.white, for: .normal)
+        return button
+    }()
     @objc func finish(){
-        dismiss(animated: true, completion: nil)
-        present(MainPageViewController(), animated: true, completion: nil)
+        self.showAlert(title: "Success", message: "Payment Sent")
+
+        dismiss(animated: true) {
+//            self.showAlert(title: "Success", message: "Payment Sent")
+            self.dismiss(animated: true, completion: {
+                FinalPaymentViewController().dismiss(animated: true)
+            })
+
+        }
+       // dismiss(animated: true, completion: nil)
+        //present(MainPageViewController(), animated: true, completion: nil)
+
         //dismiss(animated: true, completion: nil)
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .blue
+        UIView.animate(withDuration: 0.5, delay: 0.0, options: [.repeat,.autoreverse,.curveEaseInOut,.layoutSubviews], animations: {
+            self.ana.transform = CGAffineTransform(scaleX: 1.2, y: 1.2)
+
+            //self.secondLayer.transform = CGAffineTransform(scaleX: 1.4, y: 1.4)
+        })
+        let gradient = CAGradientLayer()
+        gradient.frame = self.view.bounds
+        gradient.colors = [UIColor.magenta.cgColor,UIColor.red.cgColor,UIColor.purple.cgColor,UIColor.blue.cgColor]
+        self.view.layer.addSublayer(gradient)
+        view.backgroundColor = .white
         constraint()
+//        let gradient = CAGradientLayer()
+//        gradient.frame = self.view.bounds
+//        gradient.colors = [UIColor.magenta.cgColor,UIColor.red.cgColor,UIColor.purple.cgColor,UIColor.blue.cgColor]
+//        self.view.layer.addSublayer(gradient)
     }
     
 
     func constraint(){
+        view.addSubview(ana)
         view.addSubview(done)
         view.addSubview(amount)
         view.addSubview(send)
@@ -98,6 +136,11 @@ class FinalPaymentViewController: UIViewController {
         done.translatesAutoresizingMaskIntoConstraints = false
         done.topAnchor.constraint(equalTo: to.bottomAnchor, constant: 33).isActive = true
         done.centerXAnchor.constraint(equalTo: view.centerXAnchor, constant: 0).isActive = true
+        //ana
+        ana.translatesAutoresizingMaskIntoConstraints = false
+        ana.topAnchor.constraint(equalTo: to.bottomAnchor, constant: 33).isActive = true
+        ana.centerXAnchor.constraint(equalTo: view.centerXAnchor, constant: 0).isActive = true
+        //ana.heightAnchor.constraint(equalTo: view.heightAnchor, multiplier: 0.08).isActive = true
     }
 
 }
