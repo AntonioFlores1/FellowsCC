@@ -17,7 +17,7 @@ class FriendsViewController: UIViewController {
     var friendCell = FirendsCollectionViewCell()
     var filteredCandies = [CCUser]()
     private var authservice = AppDelegate.authservice
-    private var listener: ListenerRegistration!
+    //private var listener: ListenerRegistration!
     
     var name = String()
     var bioDescription = String()
@@ -37,6 +37,7 @@ class FriendsViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        navigationItem.title = "Friends"
         self.view.backgroundColor = .black
         friendView.searchBar.delegate = self
         view.addSubview(friendView)

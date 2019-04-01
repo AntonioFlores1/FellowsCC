@@ -39,6 +39,7 @@ let searchController = UISearchController(searchResultsController: nil)
         super.viewDidLoad()
         //view.backgroundColor = .yellow
         //navigationItem.leftBarButtonItem = UIBarButtonItem.init(barButtonSystemItem: .cancel, target: self, action: #selector(cancelButtonPressed))
+        navigationItem.title = "Send money" 
    view.addSubview(friendPaymentTo)
     friendPaymentTo.collectionView.delegate = self
     friendPaymentTo.collectionView.dataSource = self

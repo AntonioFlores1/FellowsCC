@@ -42,6 +42,7 @@
 		55877866224D18E3005E62A7 /* FriendPaymentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55877865224D18E3005E62A7 /* FriendPaymentView.swift */; };
 		55877868224D191E005E62A7 /* FreindPaymentToViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55877867224D191E005E62A7 /* FreindPaymentToViewController.swift */; };
 		5587786A224D54E4005E62A7 /* FinalPaymentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55877869224D54E4005E62A7 /* FinalPaymentViewController.swift */; };
+		5587786C224D7D09005E62A7 /* backTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5587786B224D7D09005E62A7 /* backTableViewCell.swift */; };
 		67FD3B2C224C179A00088228 /* FriendView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67FD3B2B224C179A00088228 /* FriendView.swift */; };
 		67FD3B2E224C3A1900088228 /* FriendDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67FD3B2D224C3A1900088228 /* FriendDetailView.swift */; };
 		A4E48C49E04BBC7D07D6E63F /* Pods_FellowsCC.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B39D3DDACFCCDAAF54E3D02A /* Pods_FellowsCC.framework */; };
@@ -86,6 +87,7 @@
 		55877865224D18E3005E62A7 /* FriendPaymentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendPaymentView.swift; sourceTree = "<group>"; };
 		55877867224D191E005E62A7 /* FreindPaymentToViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FreindPaymentToViewController.swift; sourceTree = "<group>"; };
 		55877869224D54E4005E62A7 /* FinalPaymentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinalPaymentViewController.swift; sourceTree = "<group>"; };
+		5587786B224D7D09005E62A7 /* backTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = backTableViewCell.swift; sourceTree = "<group>"; };
 		67FD3B2B224C179A00088228 /* FriendView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendView.swift; sourceTree = "<group>"; };
 		67FD3B2D224C3A1900088228 /* FriendDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendDetailView.swift; sourceTree = "<group>"; };
 		74BA1614CD8E68AA494A4AFC /* Pods-FellowsCC.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FellowsCC.debug.xcconfig"; path = "Target Support Files/Pods-FellowsCC/Pods-FellowsCC.debug.xcconfig"; sourceTree = "<group>"; };
@@ -157,6 +159,7 @@
 			isa = PBXGroup;
 			children = (
 				55178F92224BDE0A001D6BB3 /* MainPageViewController.swift */,
+				5587786B224D7D09005E62A7 /* backTableViewCell.swift */,
 				55178F94224BDE43001D6BB3 /* MainDetailViewController.swift */,
 				55178F9F224BDEE7001D6BB3 /* HistoryDetailCells */,
 			);
@@ -413,15 +416,13 @@
 				55178FB4224BF587001D6BB3 /* DBService+User.swift in Sources */,
 				55178FA6224BE010001D6BB3 /* AccountSettingsViewController.swift in Sources */,
 				55178FBB224BFB7A001D6BB3 /* Date+Ext.swift in Sources */,
+				5587786C224D7D09005E62A7 /* backTableViewCell.swift in Sources */,
 				55178FA8224BE02C001D6BB3 /* DetailAccountViewController.swift in Sources */,
 				55877860224CE56F005E62A7 /* RequestViewController.swift in Sources */,
 				55178F93224BDE0A001D6BB3 /* MainPageViewController.swift in Sources */,
 				55178F7E224BDD9F001D6BB3 /* AppDelegate.swift in Sources */,
-
 				67FD3B2E224C3A1900088228 /* FriendDetailView.swift in Sources */,
-
 				096DA6D6224C177F007590CC /* AccountSettingsView.swift in Sources */,
-
 				55178FAD224BEF86001D6BB3 /* CreateViewController.swift in Sources */,
 				55178FA1224BDF1C001D6BB3 /* PaymentView.swift in Sources */,
 				5587785E224CE554005E62A7 /* PaymentViewController.swift in Sources */,
@@ -429,10 +430,8 @@
 				55877864224D18A7005E62A7 /* PaymentToCollectionViewCell.swift in Sources */,
 				55178FC3224C01AD001D6BB3 /* TabBarController.swift in Sources */,
 				55178FB2224BF043001D6BB3 /* AuthSerice.swift in Sources */,
-
 				67FD3B2C224C179A00088228 /* FriendView.swift in Sources */,
 				096DA6D8224C1798007590CC /* DetailAccountView.swift in Sources */,
-
 				55178F99224BDE79001D6BB3 /* FriendsDetailViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
