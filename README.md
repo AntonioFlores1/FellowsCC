@@ -9,7 +9,11 @@ This app is a cryptocurrency banking app. The app allows users to add money to t
 
 * This app is a proof of concept and was tested using mock data
 ## Gifs
+
+### Able to search up friend in your friend's list and have the option to request or send money to them 
 ![SendMoney to freinds in freind pcircle](https://user-images.githubusercontent.com/43770391/55336446-ec587f00-546a-11e9-9c12-3b7f6f75dc74.gif)
+### 
+
 ## Contributors
 ### Antonio Flores 
 https://github.com/AntonioFlores1
