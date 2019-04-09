@@ -46,7 +46,7 @@ class MainPageViewController: UIViewController {
     lazy var creditcardButton: UIButton = {
         let button = UIButton()
         button.imageView?.contentMode = .scaleToFill
-        button.setImage(UIImage.init(named: "defaultCreditCard"), for: .normal )
+        button.setImage(UIImage.init(named: "a8013399-0b9e-4201-8dd8-b3332d7bcda6"), for: .normal )
         button.addTarget(self, action: #selector(flipCreditCard), for: .touchUpInside)
 //        button.layer.cornerRadius = button.frame.height / 2
 //        button.layer.borderWidth = 1

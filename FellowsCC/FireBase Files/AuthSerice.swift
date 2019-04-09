@@ -12,7 +12,7 @@ import FirebaseAuth
 protocol AuthServiceCreateNewAccountDelegate: AnyObject {
     func didRecieveErrorCreatingAccount(_ authservice: AuthService, error: Error)
     func didCreateNewAccount(_ authservice: AuthService, user: CCUser)
-}
+} 
 
 protocol AuthServiceExistingAccountDelegate: AnyObject {
     func didRecieveErrorSigningToExistingAccount(_ authservice: AuthService, error: Error)
